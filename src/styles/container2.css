@@ -1,0 +1,29 @@
+.body {
+    padding-top: 3%;
+    padding-left: 9em;
+}
+
+.container-1 .left,
+.container-1 .right {
+    flex: 1;
+    padding: 10px;
+}
+
+.container-1 .right {
+    position: relative;
+    height: 560px;
+    overflow: hidden;
+    /* Обрезает содержимое, выходящее за границы контейнера */
+}
+
+.container-1 .right img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    /* Устанавливает высоту изображения равной высоте контейнера */
+    width: auto;
+    /* Устанавливает ширину изображения автоматически для сохранения пропорций */
+    object-fit: cover;
+    /* Изображение будет покрывать контейнер, сохраняя пропорции */
+}

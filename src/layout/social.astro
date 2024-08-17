@@ -1,0 +1,103 @@
+---
+import { Send, HandCoins, Bot, Contact } from "lucide-vue-next";
+---
+
+<body>
+    <div class="container">
+        <div
+            style="transform-style: preserve-3d;"
+            data-tilt
+            data-tilt-scale="1.03"
+            class="item"
+        >
+            <a style="transform: translateZ(20px)"
+                ><span class="icon"><Contact /></span>Vk</a
+            >
+        </div>
+        <div
+            style="transform-style: preserve-3d;"
+            data-tilt
+            data-tilt-scale="1.03"
+            class="item"
+        >
+            <a style="transform: translateZ(20px)"
+                ><span class="icon"><Bot /></span>Discord</a
+            >
+        </div>
+        <div
+            style="transform-style: preserve-3d;"
+            data-tilt
+            data-tilt-scale="1.03"
+            class="item"
+        >
+            <a style="transform: translateZ(20px)">
+                <span class="icon"><Send /></span>Telegram
+            </a>
+        </div>
+        <div
+            style="transform-style: preserve-3d;"
+            data-tilt
+            data-tilt-scale="1.03"
+            class="item"
+        >
+            <a style="transform: translateZ(20px)"
+                ><span class="icon"></span><HandCoins />Boosty</a
+            >
+        </div>
+    </div>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"
+        integrity="sha512-K9tDZvc8nQXR1DMuT97sct9f40dilGp97vx7EXjswJA+/mKqJZ8vcZLifZDP+9t08osMLuiIjd4jZ0SM011Q+w=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"></script>
+</body>
+<style>
+    body {
+        margin: 0;
+    }
+
+    .container {
+        display: flex; /* Используем Flexbox */
+        flex-wrap: wrap; /* Позволяет элементам переноситься на следующую строку */
+        gap: 50px; /* Отступы между элементами */
+        padding: 10px; /* Добавляем отступы от краёв */
+    }
+
+    .item {
+        flex: 0.5 0.5 calc(1% - 1px); /* Элементы занимают 25% ширины контейнера минус отступы */
+        box-sizing: border-box; /* Учитываем отступы и границы в ширину элемента */
+        font-size: 24px;
+        padding: 12px; /* Добавляем внутренние отступы */
+        border: 1px solid #ccc; /* Добавляем границу для видимости */
+        text-align: center; /* Выравнивание текста по центру */
+        transition: background-color 0.3s; /* Плавный переход фона */
+        border-radius: 100px;
+        letter-spacing: 10px;
+        display: flex; /* Используем Flexbox внутри элемента */
+        justify-content: center; /* Центрируем содержимое по горизонтали */
+        align-items: center; /* Центрируем содержимое по вертикали */
+    }
+
+    .item a {
+        display: flex; /* Используем Flexbox внутри ссылки */
+        align-items: center; /* Центрируем содержимое по вертикали */
+        gap: 8px; /* Расстояние между иконкой и текстом */
+        text-decoration: none; /* Убираем подчеркивание ссылки */
+        color: inherit; /* Наследуем цвет от родителя */
+    }
+
+    .icon {
+        display: inline-flex; /* Используем inline-flex для иконки */
+        align-items: center; /* Центрируем иконку по вертикали */
+    }
+
+    .item:hover {
+        box-shadow: 0 0 6px #e0e0e0; /* Синее свечение */
+    }
+
+    @media (max-width: 400px) {
+        .item {
+            flex: 1 1 100%; /* На очень маленьких экранах элементы занимают 100% ширины */
+        }
+    }
+</style>

@@ -1,0 +1,54 @@
+---
+import "@/styles/globals.css";
+
+import Social from "../layout/social.astro";
+import Header from "../layout/Header.astro";
+import Footer from "../layout/footer.astro";
+
+const currentPage = "update";
+---
+
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title></title>
+    </head>
+    <body class="bg-background">
+        <Header />
+        <div class="vk">
+            <!-- Put this script tag to the <head> of your page -->
+            <script
+                type="text/javascript"
+                src="https://vk.com/js/api/openapi.js?168"></script>
+
+            <!-- Put this div tag to the place, where the Group block will be -->
+            <div id="vk_groups"></div>
+            <script type="text/javascript">
+                VK.Widgets.Group(
+                    "vk_groups",
+                    {
+                        mode: 4,
+                        no_cover: 1,
+                        width: 1000,
+                        height: 900,
+                        color1: "010817",
+                        color2: "FFFFFF",
+                        color3: "5181B8",
+                    },
+                    211084862,
+                );
+            </script>
+        </div>
+        <Social />
+        <Footer style="padding-top: 500px;" />
+    </body>
+    <style>
+        .vk {
+            padding-left: 20%;
+            padding-bottom: 100px;
+        }
+    </style>
+</html>

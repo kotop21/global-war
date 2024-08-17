@@ -1,0 +1,97 @@
+---
+// Определите текущую страницу в компоненте
+const currentPage = Astro.props.currentPage || "update"; // 'home' или 'news'
+import "@/styles/globals.css";
+import { Button } from "@/components/ui/button";
+import { House, CircleFadingArrowUp } from "lucide-vue-next";
+---
+
+<body>
+    <div class="container-header">
+        <div class="header">
+            <div class="left"><h1>Stalker global war</h1></div>
+            <div class="right">
+                <Button
+                    class={currentPage === "home" ? "active" : "inactive"}
+                    variant="ghost"
+                    ><House class="icon" /><a href="/">Главная</a></Button
+                >
+                <Button
+                    class={currentPage === "update" ? "active" : "inactive"}
+                    variant="ghost"
+                    ><CircleFadingArrowUp class="icon" /><a href="/update"
+                        >Список изменений<a></a></a
+                    >
+                </Button>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .icon {
+            width: 16px;
+            height: 16px;
+            transform: translateY(-1px); /* Смещение иконки вверх */
+        }
+        .container-header {
+            display: flex;
+            justify-content: center; /* Центрируем по горизонтали */
+            align-items: center; /* Центрируем по вертикали, если нужно */
+            z-index: 999999;
+            position: sticky;
+            top: 0;
+        }
+        h1 {
+            letter-spacing: 5px;
+            width: 400px;
+            font-size: 34px;
+            font-family: "Qore";
+            src: url("/Qore.otf") format("opentype");
+            line-height: 0.9;
+            color: #ffffff;
+            opacity: 80%;
+        }
+        .header {
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0); /* Полностью прозрачный фон */
+            backdrop-filter: blur(10px); /* Размытие фона */
+            font-size: 25px;
+            display: flex;
+            justify-content: space-between;
+            margin: 20px;
+            border-radius: 16px;
+            width: 75%;
+            height: 70px;
+        }
+        .right {
+            display: flex;
+            align-items: center;
+        }
+        .left {
+            display: flex;
+            align-items: center;
+        }
+        Button {
+            /* Пример стилей для кнопки */
+            font-size: 18px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            color: gray;
+        }
+        .active {
+            color: white;
+            text-decoration: underline;
+            text-decoration-color: white;
+            text-decoration-thickness: 2px;
+            text-underline-offset: 7px;
+        }
+        .active:hover {
+            text-decoration: none;
+        }
+
+        .inactive {
+            color: gray; /* Цвет для неактивной кнопки */
+        }
+    </style>
+</body>

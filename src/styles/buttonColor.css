@@ -1,0 +1,17 @@
+.container-1 .left .mega {
+    background-color: #ff4445;
+    box-shadow: 0 0 20px #ff4445; /* Синее свечение */
+}
+.container-1 .left .torrent {
+    background-color: #1ad65f;
+    box-shadow: 0 0 20px #1ad65f; /* Синее свечение */
+}
+.container-1 .left .yandex {
+    background-color: #ff3c14;
+    box-shadow: 0 0 20px #ff3c14; /* Синее свечение */
+}
+
+.container-1 .left .google {
+    background-color: #3c82f5;
+    box-shadow: 0 0 20px #3c82f5; /* Синее свечение */
+}

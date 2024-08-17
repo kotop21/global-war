@@ -1,0 +1,77 @@
+---
+import { Separator } from "@/components/ui/separator";
+import "@/styles/style.css";
+import { PawPrint } from "lucide-vue-next";
+import gwd from "../../public/gwd.png";
+---
+
+<footer>
+    <Separator />
+    <div class="footer-section">
+        <p>Powered by GWD</p>
+    </div>
+    <div class="footer-section">
+        <p style="color: #E4E4E4;">
+            <PawPrint class="icon" />Сайт сделан при поддержке <a
+                href="https://t.me/kotop21"
+                target="_blank">kotop21</a
+            >. Заказать сайт можно Tg - <a
+                href="https://t.me/kotop21"
+                target="_blank">kotop21</a
+            ><PawPrint class="icon" />
+        </p>
+    </div>
+    <div class="footer-section">
+        <img
+            class="icon"
+            src={gwd.src}
+            alt="Stalker Global War"
+            style={{
+                width: "32px", // Устанавливаем ширину изображения
+                height: "auto", // Автоматически подстраиваем высоту, чтобы сохранить пропорции
+            }}
+        />
+    </div>
+</footer>
+
+<style>
+    .icon {
+        padding-right: 5px;
+        display: inline-block;
+        margin-left: 5px; /* Добавляет немного пространства между текстом и иконкой */
+        vertical-align: middle; /* Выравнивает иконку по вертикали относительно текста */
+        font-size: 1em; /* Поддерживает размер иконки в соответствии с текстом */
+    }
+
+    p a {
+        text-decoration: underline;
+    }
+    footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 10px;
+        opacity: 0.6;
+    }
+
+    .footer-section {
+        flex: 1;
+        text-align: center;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    /* Адаптивность */
+    @media (max-width: 600px) {
+        footer {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .footer-section {
+            width: 100%;
+            text-align: left;
+        }
+    }
+</style>

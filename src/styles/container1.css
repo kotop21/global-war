@@ -1,0 +1,70 @@
+.container-1 .left,
+.container-1 .right {
+    flex: 1;
+    padding: 10px;
+}
+
+.container-1 .right {
+    position: relative;
+    height: 560px;
+    overflow: hidden;
+    /* Обрезает содержимое, выходящее за границы контейнера */
+}
+
+.container-1 .right img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    /* Устанавливает высоту изображения равной высоте контейнера */
+    width: auto;
+    /* Устанавливает ширину изображения автоматически для сохранения пропорций */
+    object-fit: cover;
+    /* Изображение будет покрывать контейнер, сохраняя пропорции */
+}
+
+/* */
+.container-1 {
+    display: flex;
+    justify-content: space-between; /* Распределяет элементы по всей ширине */
+}
+.container-1 .left {
+    padding-top: 500px;
+    display: flex;
+    flex-direction: column; /* Ставим элементы друг под другом */
+    gap: 50px; /* Добавляем расстояние между элементами */
+}
+.container-1 .left h1 {
+    padding-top: 100px;
+    background-image: linear-gradient(
+        124deg,
+        rgba(235, 235, 235, 1) 0%,
+        rgba(10, 58, 150, 1) 100%
+    );
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-box-decoration-break: clone;
+    font-family: "Qore";
+    src: url("/Qore.otf") format("opentype");
+    font-size: 80px;
+    line-height: 0.8;
+    text-shadow: 0 160px 30px rgba(255, 255, 255, 0.1);
+}
+
+.container-1 .left p {
+    width: 91%;
+}
+
+.container-1 .left .button {
+    padding-top: 50px;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.container-1 .left Button {
+    color: white;
+    font-size: 20px;
+    width: 20%;
+    height: 53px;
+}

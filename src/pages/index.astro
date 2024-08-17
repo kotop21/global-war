@@ -1,0 +1,108 @@
+---
+//css
+import "@/styles/globals.css";
+import "@/styles/buttonColor.css";
+import "@/styles/container1.css";
+import "@/styles/container2.css";
+import "@/styles/style.css";
+
+//lib
+import { Button } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
+import { Download } from "lucide-vue-next";
+
+//local
+import Social from "../layout/social.astro";
+import Header from "../layout/Header.astro";
+import image1 from "../../public/image1.png";
+import Footer from "../layout/footer.astro";
+
+// Code
+const currentPage = "home"; // Или 'news', в зависимости от страницы
+---
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>Astro</title>
+    </head>
+    <body class="bg-background">
+        <Header currentPage={currentPage} />
+        <div class="body">
+            <div class="container-1">
+                <div class="left">
+                    <h1>STALKER GLOBAL WAR</h1>
+                    <p>
+                        Масштабная модификация на Call of Chernobyl для
+                        реализации своей Войны Группировок.
+                    </p>
+                    <div class="button">
+                        <Button class="torrent"> Torrent</Button>
+                        <Button class="google"> Google</Button>
+                        <Button class="yandex"> Yandex</Button>
+                        <Button class="mega"> Mega.nz</Button>
+                    </div>
+                </div>
+                <div class="right your-element">
+                    <img
+                        data-tilt
+                        data-tilt-full-page-listening
+                        data-tilt-glare
+                        data-tilt-axis="x"
+                        data-tilt-max-glare="0.8"
+                        src={image1.src}
+                        alt="Stalker Global War"
+                        style={{
+                            zIndex: 9999, // Большое значение, чтобы быть поверх всех других элементов
+                        }}
+                    />
+
+                    <img
+                        src={image1.src}
+                        alt="Stalker Global War"
+                        style={{
+                            boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.5)", // Добавляет тень
+                            filter: "blur(60px)", // Размытие изображения
+                        }}
+                    />
+                </div>
+            </div>
+            <h2 class="border-b"></h2>
+            <div class="container-2"><Social /></div>
+            <div class="container-3"><Footer /></div>
+        </div>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"
+            integrity="sha512-K9tDZvc8nQXR1DMuT97sct9f40dilGp97vx7EXjswJA+/mKqJZ8vcZLifZDP+9t08osMLuiIjd4jZ0SM011Q+w=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"></script>
+        <script>
+            document.addEventListener("scroll", () => {
+                const image = document.getElementById("scrollImage");
+                const scrollTop = window.scrollY;
+
+                // Вычисляем новое значение по оси Y, ограниченное 400 пикселями
+                const newY = Math.min(scrollTop, 400);
+                image.style.transform = `translateY(${newY}px)`;
+            });
+        </script>
+    </body>
+</html>
+
+<style>
+    .body {
+        padding-top: 3%;
+        padding-left: 9em;
+        width: 91%;
+    }
+    .body > * {
+        margin-bottom: 150px; /* Adjust the value as needed */
+    }
+
+    .body > :last-child {
+        margin-bottom: 0; /* Remove margin from the last element */
+    }
+</style>
